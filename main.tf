@@ -3,5 +3,11 @@ resource "random_id" "server" {
 }
 
 output "hash" {
-  value = "${random_id.server.hex}"
+  value       = "${random_id.server.hex}"
+  description = "Generated hash"
+}
+
+variable "byte_length" {
+  description = "How long to make the generated hash"
+  default     = 8
 }
